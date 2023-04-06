@@ -1,6 +1,6 @@
-# Proje Adı: 
-React-Team-Selection-and-Grouping
-Bu bir iş dağıtma uygulamasıdır. Takımda her kesin bir yetkinliği vardır. Siz bunları gruolandırmak isterseniz mix gruplar kurmak istemek kaçınılmzadır kurumsal şirketlerdeQ 
+# Proje Adı: React-Team-Selection-and-Grouping
+Bu bir iş dağıtma uygulamasıdır. Takımda her kesin bir yetkinliği vardır. Siz bunları grup
+landırmak isterseniz mix gruplar kurmak istemek kaçınılmzadır kurumsal şirketlerdeQ 
 
 Demo Görüntüsü
 
