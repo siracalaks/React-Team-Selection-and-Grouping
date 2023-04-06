@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/React-Team-Selection-and-Grouping/static/css/main.c4164085.css",
+    "main.js": "/React-Team-Selection-and-Grouping/static/js/main.2e7be419.js",
+    "static/media/maleProfile.jpg": "/React-Team-Selection-and-Grouping/static/media/maleProfile.657c4196488ead649e93.jpg",
+    "static/media/femaleProfile.jpg": "/React-Team-Selection-and-Grouping/static/media/femaleProfile.48d77dc2519df08d5cc5.jpg",
+    "index.html": "/React-Team-Selection-and-Grouping/index.html",
+    "main.c4164085.css.map": "/React-Team-Selection-and-Grouping/static/css/main.c4164085.css.map",
+    "main.2e7be419.js.map": "/React-Team-Selection-and-Grouping/static/js/main.2e7be419.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4164085.css",
+    "static/js/main.2e7be419.js"
+  ]
+}
