@@ -1,151 +1,67 @@
 import * as React from 'react';
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
-import Header from './components/Header';
-import Employees from './components/Employees';
-import Footer from './components/Footer';
-import GroupedTeamMembers from './components/GroupedTeamMembers';
+import './styles/theme.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Contexts
+import { TeamProvider } from './context/TeamContext';
+import { ThemeProvider } from './context/ThemeContext';
+
+// Components
 import Nav from './components/Nav';
-import NotFound from './components/NotFound';
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Footer from './components/Footer';
+import LoadingSpinner from './components/UI/LoadingSpinner';
+import ThemeToggle from './components/ThemeToggle';
+
+// Lazy loaded components
+const Employees = lazy(() => import('./components/Employees'));
+const GroupedTeamMembers = lazy(() => import('./components/GroupedTeamMembers'));
+const NotFound = lazy(() => import('./components/NotFound'));
+const Header = lazy(() => import('./components/Header'));
+const AdvancedDashboard = lazy(() => import('./components/AdvancedDashboard'));
+const DraggableTeamBoard = lazy(() => import('./components/DraggableTeamBoard'));
 
 function App() {
-
-  const [selectedTeam, setTeam] = useState(JSON.parse(localStorage.getItem('selectedTeam')) || "TeamB");
-
-  const [employees, setEmployees] = useState(JSON.parse(localStorage.getItem('employeeList')) || [{
-    id: 1,
-    fullName: "Bob Jones",
-    designation: "JavaScript Developer",
-    gender: "male",
-    teamName: "TeamA"
-  },
-  {
-    id: 2,
-    fullName: "Jill Bailey",
-    designation: "Node Developer",
-    gender: "female",
-    teamName: "TeamA"
-  },
-  {
-    id: 3,
-    fullName: "Gail Shepherd",
-    designation: "Java Developer",
-    gender: "female",
-    teamName: "TeamA"
-  },
-  {
-    id: 4,
-    fullName: "Sam Reynolds",
-    designation: "React Developer",
-    gender: "male",
-    teamName: "TeamB"
-  },
-  {
-    id: 5,
-    fullName: "David Henry",
-    designation: "DotNet Developer",
-    gender: "male",
-    teamName: "TeamB"
-  },
-  {
-    id: 6,
-    fullName: "Sarah Blake",
-    designation: "SQL Server DBA",
-    gender: "female",
-    teamName: "TeamB"
-  },
-  {
-    id: 7,
-    fullName: "James Bennet",
-    designation: "Angular Developer",
-    gender: "male",
-    teamName: "TeamC"
-  },
-  {
-    id: 8,
-    fullName: "Jessica Faye",
-    designation: "API Developer",
-    gender: "female",
-    teamName: "TeamC"
-  },
-  {
-    id: 9,
-    fullName: "Lita Stone",
-    designation: "C++ Developer",
-    gender: "female",
-    teamName: "TeamC"
-  },
-  {
-    id: 10,
-    fullName: "Daniel Young",
-    designation: "Python Developer",
-    gender: "male",
-    teamName: "TeamD"
-  },
-  {
-    id: 11,
-    fullName: "Adrian Jacobs",
-    designation: "Vue Developer",
-    gender: "male",
-    teamName: "TeamD"
-  },
-  {
-    id: 12,
-    fullName: "Devin Monroe",
-    designation: "Graphic Designer",
-    gender: "male",
-    teamName: "TeamD"
-  }]);
-
-  useEffect(() => {
-
-    localStorage.setItem('employeeList', JSON.stringify(employees));
-
-  }, [employees]);
-
-  useEffect(() => {
-
-    localStorage.setItem('selectedTeam', JSON.stringify(selectedTeam));
-
-  }, [selectedTeam]);
-
-
-  function handleTeamSelectionChange(event) {
-    setTeam(event.target.value);
-  }
-  function handleEmployeeCardClick(event) {
-    const transformedEmployees = employees.map((employee) => employee.id === parseInt(event.currentTarget.id)
-      ? (employee.teamName === selectedTeam) ? { ...employee, teamName: '' } : { ...employee, teamName: selectedTeam }
-      : employee);
-    setEmployees(transformedEmployees);
-
-  }
-
   return (
-    <Router>
-      <Nav />
-      <Header selectedTeam={selectedTeam}
-        teamMemberCount={employees.filter((employee) => employee.teamName === selectedTeam).length}
-      />
-      <Routes>
-        <Route path="/"
-          element={<Employees employees={employees}
-            selectedTeam={selectedTeam}
-            handleEmployeeCardClick={handleEmployeeCardClick}
-            handleTeamSelectionChange={handleTeamSelectionChange}
-          />}>
-
-        </Route>
-        <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers employees={employees}
-          selectedTeam={selectedTeam} setTeam={setTeam} />}>
-        </Route>
-        <Route path="*" element={<NotFound />}>
-        </Route>
-      </Routes>
-      <Footer />
-    </Router>
+    <ThemeProvider>
+      <TeamProvider>
+        <Router basename="/">
+          <div className="App">
+            <Nav />
+            <Suspense fallback={<LoadingSpinner />}>
+              <Header />
+              <Routes>
+                <Route exact path="/" element={<Employees />} />
+                <Route path="/dashboard" element={<AdvancedDashboard />} />
+                <Route path="/grouped-team-members" element={<GroupedTeamMembers />} />
+                <Route path="/drag-and-drop" element={<DraggableTeamBoard />} />
+                <Route path="/404" element={<NotFound />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </Suspense>
+            <ThemeToggle />
+            <Footer />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+          </div>
+        </Router>
+      </TeamProvider>
+    </ThemeProvider>
   );
 }
 

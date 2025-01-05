@@ -1,0 +1,94 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --background-color: #ffffff;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --hover-color: #f8f9fa;
+  --transition-speed: 0.3s;
+}
+
+body.dark-mode {
+  --background-color: #1a1a1a;
+  --text-color: #f8f9fa;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --hover-color: #404040;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  transition: all var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background-color: var(--card-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+}
+
+.form-select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.card-collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.standout {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.02);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-collection {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .card-collection {
+    grid-template-columns: 1fr;
+  }
+} 

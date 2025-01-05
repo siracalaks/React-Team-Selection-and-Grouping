@@ -1,12 +1,162 @@
-# Proje Adı: React-Team-Selection-and-Grouping
-Bu bir iş dağıtma uygulamasıdır. Takımda her kesin bir yetkinliği vardır. Siz bunları grup
-landırmak isterseniz mix gruplar kurmak istemek kaçınılmzadır kurumsal şirketlerdeQ 
+# Team Management Dashboard
 
-Demo Görüntüsü
+A modern React application for managing team members with advanced features including drag-and-drop team assignments, analytics dashboard, and dark mode support.
 
-![](https://github.com/siracalaks/React-Team-Selection-and-Grouping/blob/main/src/React-Team-Selection-and-Grouping.png)
+![Team Management Dashboard](screenshot.png)
 
+## 🌟 Features
 
+- **Team Member Management**
+  - View and manage team members
+  - Drag-and-drop interface for team assignments
+  - Add/Edit team members with form validation
+  - Real-time updates
 
-DEMO => https://siracalaks.github.io/React-Team-Selection-and-Grouping/
+- **Advanced Dashboard**
+  - Interactive charts and statistics
+  - Team distribution visualization
+  - Gender distribution analysis
+  - Export data to Excel
+
+- **Modern UI/UX**
+  - Dark/Light theme support
+  - Responsive design
+  - Smooth animations
+  - Toast notifications
+  - Loading states
+
+- **Technical Features**
+  - Context API for state management
+  - Code splitting and lazy loading
+  - Form validation with React Hook Form
+  - Local storage persistence
+  - Modern routing system
+
+## 🚀 Live Demo
+
+[View Demo](https://your-netlify-url.netlify.app)
+
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/React-Team-Selection-and-Grouping.git
+```
+
+2. Navigate to project directory:
+```bash
+cd React-Team-Selection-and-Grouping
+```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+## 📦 Dependencies
+
+### Core Dependencies
+```json
+{
+  "react": "^18.0.0",
+  "react-dom": "^18.0.0",
+  "react-router-dom": "^6.x",
+  "bootstrap": "^5.x",
+  "bootstrap-icons": "^1.x"
+}
+```
+
+### Additional Features
+```json
+{
+  "@nivo/core": "^0.80.0",
+  "@nivo/pie": "^0.80.0",
+  "@nivo/bar": "^0.80.0",
+  "react-beautiful-dnd": "^13.1.1",
+  "react-hook-form": "^7.x",
+  "react-toastify": "^9.x",
+  "framer-motion": "^6.x",
+  "xlsx": "^0.18.x"
+}
+```
+
+## 🚀 Usage
+
+1. Start the development server:
+```bash
+npm start
+```
+
+2. Build for production:
+```bash
+npm run build
+```
+
+## 🎯 Project Structure
+
+```
+src/
+├── components/
+│   ├── AdvancedDashboard.js
+│   ├── DraggableTeamBoard.js
+│   ├── EmployeeForm.js
+│   ├── Employees.js
+│   ├── GroupedTeamMembers.js
+│   ├── Nav.js
+│   └── UI/
+├── context/
+│   ├── TeamContext.js
+│   └── ThemeContext.js
+├── services/
+│   └── ExportService.js
+├── styles/
+│   └── theme.css
+└── App.js
+```
+
+## 🔧 Configuration
+
+- Environment variables can be configured in `.env` file
+- Theme colors can be customized in `src/styles/theme.css`
+- Team configurations can be modified in `src/context/TeamContext.js`
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📱 Responsive Design
+
+The application is fully responsive and works on:
+- Desktop devices
+- Tablets
+- Mobile phones
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- React Team
+- Bootstrap Team
+- Nivo Charts
+- React Beautiful DnD
+- All other open-source contributors
+
+## 📞 Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+
+Project Link: [https://github.com/yourusername/React-Team-Selection-and-Grouping](https://github.com/yourusername/React-Team-Selection-and-Grouping)
 
