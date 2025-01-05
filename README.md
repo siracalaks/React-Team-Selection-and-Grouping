@@ -34,7 +34,7 @@ A modern React application for managing team members with advanced features incl
 
 ## 🚀 Live Demo
 
-[View Demo](https://your-netlify-url.netlify.app)
+[View Demo](https://react-team-selection-and-grouping.netlify.app/)
 
 ## 🛠️ Installation
 
