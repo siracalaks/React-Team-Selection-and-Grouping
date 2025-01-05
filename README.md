@@ -154,9 +154,29 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - React Beautiful DnD
 - All other open-source contributors
 
-## 📞 Contact
+## 👨‍💻 Developer
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/siracalaks">
+        <img src="https://github.com/siracalaks.png" width="100px;" alt="Developer Profile Picture"/>
+        <br />
+        <sub><b>Sirac</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-Project Link: [https://github.com/yourusername/React-Team-Selection-and-Grouping](https://github.com/yourusername/React-Team-Selection-and-Grouping)
+### Contact
+- 📧 Email: [siracalaks@gmail.com](mailto:email@example.com)
+- 💼 LinkedIn: [https://www.linkedin.com/in/sirac-alakus-64a29917a/](https://www.linkedin.com/in/sirac-alakus-64a29917a/)
+
+---
+
+<div align="center">
+
+⭐️ If you enjoyed this project, don’t forget to give it a star!
+
+</div>
 
